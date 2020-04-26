@@ -1,10 +1,11 @@
 from tkinter import *
+from playsound import playsound
 
 root = Tk()
 root.title("Police Computer Pro XS Max")
 root.geometry("700x500")
 
-title = Label(text="Police Department Database System", fg="#0000CD", font="Colonas 15")
+title = Label(text="Police Department Computer System", fg="#0000CD", font="Colonas 15")
 title.pack()
 
 def name_check():
@@ -39,6 +40,26 @@ def licence_check():
 	info7 = Label(text="Wanted: YES", fg="red", font="Colonas")
 	info7.place(y=430)
 
+def panic():
+	playsound('panic-button.mp3')
+	playsound('UNITS_RESPOND_CODE_99_01.wav')
+def code2():
+	playsound('UNITS_RESPOND_CODE_02_01.wav')
+def code3():
+	playsound('UNITS_RESPOND_CODE_03_01.wav')
+def code4():
+	playsound('REPORT_RESPONSE_COPY_04.wav')
+def call():
+	playsound('DISPATCH_INTRO_01.wav')
+	playsound('ATTENTION_ALL_UNITS_01.wav')
+	playsound('OFFICERS_REPORT_01.wav')
+	playsound('CRIME_11_351_02.wav')
+	playsound('SUSPECT_LAST_SEEN_01.wav')
+	playsound('AT_01.wav')
+	playsound('STREET_ARMADILLO_AVE_01.wav')
+	playsound('UNITS_RESPOND_CODE_03_02.wav')
+	playsound('OUTRO_03.wav')
+
 # name check
 enter_name = Label(text="Enter name for get information: ", fg="#0000CD", font="Colonas")
 enter_name.place(y=60)
@@ -62,17 +83,20 @@ search_button_lp = Button(text="Search", command=licence_check)
 search_button_lp.place(x=550, y=95)
 
 # code buttons
-code2 = Button(text="CODE 2", fg='#FFA500')
+code2 = Button(text="CODE 2", fg='#FFA500', command=code2)
 code2.place(x=420, y=460)
 
-code3 = Button(text="CODE 3", fg='#FF4500')
+code3 = Button(text="CODE 3", fg='#FF4500', command=code3)
 code3.place(x=500, y=460)
 
-code4 = Button(text="CODE 4", fg='green')
+code4 = Button(text="CODE 4", fg='green', command=code4)
 code4.place(x=580, y=460)
 
-panic = Button(text="PANIC", fg='red')
+panic = Button(text="PANIC", fg='red', command=panic)
 panic.place(x=350, y=460)
+
+call = Button(text="CALL", fg='blue', command=call)
+call.place(x=150, y=460)
 
 root.mainloop()
 
